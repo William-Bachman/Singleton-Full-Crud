@@ -1,0 +1,34 @@
+﻿@model SingletonFullCRUD.Models.AddBugViewModel
+
+@{
+    ViewBag.Title = "AddBug";
+}
+
+<h2><u>Create A New Bug</u></h2>
+
+<form method="post">
+    @*
+        <label for="Message">Message</label> <br />
+        <input type="text" id="Message" name="Message" class="form-control" value /> <br />
+    *@
+
+    @* M == Model *@
+
+    @Html.LabelFor(M => M.Bug.Message) <br />
+    @Html.TextBoxFor(M => M.Bug.Message, new { @class = "form-control" }) <br />
+
+    @Html.LabelFor(M => M.Bug.UserNameSubmitted) <br />
+    @Html.TextBoxFor(M => M.Bug.UserNameSubmitted, new { @class = "form-control" }) <br />
+
+    @Html.LabelFor(M => M.Bug.Priority) <br />
+    @Html.EnumDropDownListFor(M => M.Bug.Priority, new { @class = "form-control" }) <br />
+
+    @Html.LabelFor(M => M.Bug.Status) <br />
+    <select name="Bug.Status" class="form-control">
+        @foreach (var s in Model.Statuses)
+        {
+            <option value="@s">@s</option>
+        }
+    </select> <br />
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

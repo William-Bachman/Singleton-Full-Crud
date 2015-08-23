@@ -1,0 +1,11 @@
+﻿@model  SingletonFullCRUD.Model.Bug
+@{
+    ViewBag.Title = "EditBug";
+}
+
+<h2>Edit Bug</h2>
+<form method="post">
+@Html.LabelFor(x=>x.Message)<br/>
+@Html.TextBoxFor(x=>x.Message)<br/>
+
+</form>

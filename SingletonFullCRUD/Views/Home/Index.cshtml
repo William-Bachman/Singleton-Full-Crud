@@ -1,0 +1,14 @@
+﻿@model List<SingletonFullCRUD.Model.Bug>
+
+<br />
+@foreach (var b in Model)
+{
+    <div class="well">
+        <h1>@b.Message</h1>
+        <h3>@b.UserNameSubmitted</h3>
+        <h3>@b.Priority</h3>
+        <h3>@b.Status</h3>
+        @Html.ActionLink("Details", "Details", new { id = b.BugId }, new { @class = "btn btn-primary" })
+        @* <a href="/Home/Details/{id}" class="btn btn-primary">Details</a> *@
+    </div>
+}

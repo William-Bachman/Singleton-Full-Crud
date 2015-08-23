@@ -1,0 +1,15 @@
+﻿@model SingletonFullCRUD.Model.Bug
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2><u>Bug Details</u></h2>
+
+<h4>@Model.Message</h4>
+<h6>@Model.UserNameSubmitted</h6>
+<h6>@Model.Status</h6>
+<h6>@Model.Priority</h6>
+
+@Html.ActionLink("Delete", "DeleteBug", new { id = Model.BugId }, new {@class = "btn btn-default" })
+@Html.ActionLink("Edit","EditBug",new {id=Model.BugId},new {@class= "btn btn-=default"})
